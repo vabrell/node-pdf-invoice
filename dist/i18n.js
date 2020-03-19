@@ -10,5 +10,15 @@ module.exports = {
     description: 'Descrição',
     name: 'Nome',
     quantity: 'Quantidade'
+  },
+  sv_SE: {
+    createdAt: 'Utförd',
+    amount: 'á pris',
+    chargeStatus: 'Status för betalning: ',
+    chargeFor: 'Faktureras till: ',
+    description: 'Beskrivning',
+    name: 'Produkt',
+    quantity: 'Antal',
+    summary: 'Summering'
   }
 };
