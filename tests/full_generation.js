@@ -4,14 +4,14 @@ const generator = require('../dist/index')
 
 const document = generator({
   company: {
-    phone: '(99) 9 9999-9999',
-    email: 'company@evilcorp.com',
-    address: 'Av. Companhia, 182, Água Branca, Piauí',
-    name: 'Evil Corp.',
+    phone: '+46-70-10 20 300',
+    email: 'info@foretag.se',
+    address: 'Affärsvägen 123, Göteborg',
+    name: 'Företag AB',
   },
   customer: {
-    name: 'Elliot Raque',
-    email: 'raque@gmail.com',
+    name: 'Sven Svensson',
+    email: 'sven.svensson@gmail.com',
   },
   items: [
     {amount: 50.0, name: 'XYZ', description: 'Lorem ipsum dollor sit amet', quantity: 12},
