@@ -60,19 +60,21 @@ function PDFInvoice(_ref) {
       doc.fontSize(TEXT_SIZE).text(translate.chargeFor, CONTENT_LEFT_PADDING, 400);
 
       doc.text(customer.name + ' <' + customer.email + '>');
+      doc.text('' + customer.address);
+      doc.text('' + customer.phone);
     },
     genTableHeaders: function genTableHeaders() {
-      ['name', 'description', 'quantity', 'amount'].forEach(function (text, i) {
+      ['name', 'description', 'amount', 'price'].forEach(function (text, i) {
         doc.fontSize(TEXT_SIZE).text(translate[text], table.x + i * table.inc, table.y);
       });
     },
     genTableRow: function genTableRow() {
       items.map(function (item) {
         return Object.assign({}, item, {
-          amount: numeral(item.amount).format('0,00.00')
+          price: numeral(item.price).format('0,00.00')
         });
       }).forEach(function (item, itemIndex) {
-        ['name', 'description', 'quantity', 'amount'].forEach(function (field, i) {
+        ['name', 'description', 'amount', 'price'].forEach(function (field, i) {
           table.currentY = table.y + TEXT_SIZE + 6 + itemIndex * 20;
           doc.fontSize(TEXT_SIZE).fillColor('#000000').text(item[field], table.x + i * table.inc, table.currentY);
         });
@@ -82,7 +84,7 @@ function PDFInvoice(_ref) {
       doc.fontSize(TEXT_SIZE).fillColor('#555555').text(translate['summary'], table.x + 0 * table.inc, table.currentY + items.length + TEXT_SIZE + 6);
 
       var totalPrice = numeral(items.reduce(function (a, b) {
-        return Number(a) + Number(b.amount || 0);
+        return Number(a) + Number(b.price || 0);
       }, 0)).format('0,00.00');
       doc.fontSize(TEXT_SIZE).fillColor('#555555').text(totalPrice + ' SEK', table.x + 3 * table.inc, table.currentY + items.length + TEXT_SIZE + 6);
     },

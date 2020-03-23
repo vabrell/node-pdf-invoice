@@ -12,11 +12,13 @@ const document = generator({
   customer: {
     name: 'Sven Svensson',
     email: 'sven.svensson@gmail.com',
+    phone: '+46-07-102 03 00',
+    address: 'Kundvägen 123'
   },
   items: [
-    {amount: 50.0, name: 'XYZ', description: 'Lorem ipsum dollor sit amet', quantity: 12},
-    {amount: 12.0, name: 'ABC', description: 'Lorem ipsum dollor sit amet', quantity: 12},
-    {amount: 127.72, name: 'DFE', description: 'Lorem ipsum dollor sit amet', quantity: 12},
+    {price: 50.0, name: 'XYZ', description: 'Lorem ipsum dollor sit amet', amount: 12},
+    {price: 12.0, name: 'ABC', description: 'Lorem ipsum dollor sit amet', amount: 12},
+    {price: 127.72, name: 'DFE', description: 'Lorem ipsum dollor sit amet', amount: 12},
   ],
 })
 

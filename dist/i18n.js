@@ -4,21 +4,21 @@ module.exports = {
   en_US: {},
   pt_BR: {
     createdAt: 'Criado em',
-    amount: 'Total',
+    price: 'Total',
     chargeStatus: 'Status de cobrança',
     chargeFor: 'Cobrança para: ',
     description: 'Descrição',
     name: 'Nome',
-    quantity: 'Quantidade'
+    amount: 'Quantidade'
   },
   sv_SE: {
     createdAt: 'Utförd',
-    amount: 'á pris',
+    price: 'á pris',
     chargeStatus: 'Status för betalning: ',
     chargeFor: 'Faktureras till: ',
     description: 'Beskrivning',
     name: 'Produkt',
-    quantity: 'Antal',
+    amount: 'Antal',
     summary: 'Summering'
   }
 };
