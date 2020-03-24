@@ -84,7 +84,7 @@ function PDFInvoice(_ref) {
       doc.fontSize(TEXT_SIZE).fillColor('#555555').text(translate['summary'], table.x + 0 * table.inc, table.currentY + items.length + TEXT_SIZE + 6);
 
       var totalPrice = numeral(items.reduce(function (a, b) {
-        return Number(a) + Number(b.price || 0);
+        return Number(a) + Number(b.price * b.amount || 0);
       }, 0)).format('0,00.00');
       doc.fontSize(TEXT_SIZE).fillColor('#555555').text(totalPrice + ' SEK', table.x + 3 * table.inc, table.currentY + items.length + TEXT_SIZE + 6);
     },
